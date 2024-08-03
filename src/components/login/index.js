@@ -143,7 +143,7 @@ class Login extends Component<Props, State> {
               />
             </IconWrapper>
             <StoreTitle>
-              MY STORE
+              Kapaas Sustain
             </StoreTitle>
           </Wrapper>
           <ContentContainer>

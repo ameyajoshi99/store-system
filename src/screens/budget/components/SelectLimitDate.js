@@ -3,7 +3,7 @@
 import React from 'react';
 
 import moment from 'moment';
-import 'moment/locale/pt-br';
+import 'moment/locale/en-in';
 
 import styled from 'styled-components';
 import Input from '../../../components/common/CustomInput';
@@ -31,7 +31,7 @@ const SelectLimitDate = ({
   values,
   mode,
 }: Props): Object => {
-  moment.locale('pt-br');
+  moment.locale('en-in');
 
   const today = moment().format('YYYY-MM-DD');
 

@@ -1,7 +1,7 @@
 import { select, call, put } from 'redux-saga/effects';
 
 import moment from 'moment';
-import 'moment/locale/pt-br';
+import 'moment/locale/en-in';
 
 import { CASHIER_OPERATIONS } from '../../screens/cashier/components/current-cashier/components/cashier-open/components/top-buttons-values/dialog-config';
 import { CREATE_CASHIER, UPDATE_CASHIER, READ_CASHIERS } from './event-handlers-types/cashier';
@@ -18,7 +18,7 @@ const EVENT_TAGS = {
 
 export function* createCashier(action) {
   try {
-    moment.locale('pt-br');
+    moment.locale('en-in');
 
     const { username } = yield select(state => state.auth.user);
     const { args } = action;

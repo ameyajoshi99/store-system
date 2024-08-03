@@ -188,7 +188,7 @@ class ProductFilter extends Component<Props, State> {
 
             const salePriceItem = {
               title: 'Price',
-              value: `$ ${salePrice.toFixed(2)}`,
+              value: `Rs. ${salePrice.toFixed(2)}`,
             };
 
             const brandItem = {

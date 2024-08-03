@@ -6,7 +6,7 @@ import {
 } from 'redux-saga/effects';
 
 import moment from 'moment';
-import 'moment/locale/pt-br';
+import 'moment/locale/en-in';
 
 import shorthash from 'shorthash';
 
@@ -39,8 +39,8 @@ const EVENT_TAGS = {
 const parseBudgetToTableView = (budget: Object): Object => ({
   ...budget,
   validityDate: moment(budget.validity, 'YYYY-MM-DD').format('ll'),
-  subtotalText: `$ ${parseFloat(budget.subtotal).toFixed(2)}`,
-  totalText: `$ ${parseFloat(budget.total).toFixed(2)}`,
+  subtotalText: `Rs. ${parseFloat(budget.subtotal).toFixed(2)}`,
+  totalText: `Rs. ${parseFloat(budget.total).toFixed(2)}`,
   customerName: budget.customer.name || '-',
   dateToShow: moment().format('ll'),
 });
@@ -78,7 +78,7 @@ export function* createBudget(action) {
 
 export function* getAllBudgets() {
   try {
-    moment.locale('pt-br');
+    moment.locale('en-in');
 
     const result = yield call(execRequest, BUDGET, READ_BUDGETS, EVENT_TAGS.READ_ALL);
 

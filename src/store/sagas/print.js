@@ -1,7 +1,7 @@
 import { select, put } from 'redux-saga/effects';
 
 import moment from 'moment';
-import 'moment/locale/pt-br';
+import 'moment/locale/en-in';
 
 import { OPEN_PRINT_WINDOW, CLOSE_PRINT_WINDOW } from './entitiesTypes';
 import { Creators as PrintCreators } from '../ducks/print';

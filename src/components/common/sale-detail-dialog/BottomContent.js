@@ -47,7 +47,7 @@ const getPaymentInfoText = (paymentInfo: Object): string => {
   const paidValueText = Object.entries(paymentInfo)
     .reduce((total, value) => total + Number(value[1]), 0);
 
-  return `$ ${paidValueText.toFixed(2)}`;
+  return `Rs. ${paidValueText.toFixed(2)}`;
 };
 
 const getDiscountText = (discount: Object): string => {
@@ -57,7 +57,7 @@ const getDiscountText = (discount: Object): string => {
     return '-';
   }
 
-  const discountText = (type === 'money' ? `$ ${value.toFixed(2)}` : `${value}%`);
+  const discountText = (type === 'money' ? `Rs. ${value.toFixed(2)}` : `${value}%`);
 
   return discountText;
 };

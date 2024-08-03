@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 
 import moment from 'moment';
-import 'moment/locale/pt-br';
+import 'moment/locale/en-in';
 
 import styled from 'styled-components';
 
@@ -55,7 +55,7 @@ class PastCashiers extends Component<Props, State> {
   componentDidMount() {
     const { getAllCashiers } = this.props;
 
-    moment.locale('pt-br');
+    moment.locale('en-in');
 
     getAllCashiers();
   }

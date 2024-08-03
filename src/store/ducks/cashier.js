@@ -42,10 +42,10 @@ const handlePastCashiers = (allPastCashiers, state) => {
 
   const pastCashiers = cashiersExceptCurrent.map(cashier => ({
     ...cashier,
-    initialMoneyCashierText: `$ ${cashier.initialMoneyCashier.toFixed(2)}`,
-    totalOutcomeText: `$ ${cashier.totalOutcome.toFixed(2)}`,
-    totalIncomeText: `$ ${cashier.totalIncome.toFixed(2)}`,
-    totalProfitText: `$ ${cashier.totalProfit.toFixed(2)}`,
+    initialMoneyCashierText: `Rs. ${cashier.initialMoneyCashier.toFixed(2)}`,
+    totalOutcomeText: `Rs. ${cashier.totalOutcome.toFixed(2)}`,
+    totalIncomeText: `Rs. ${cashier.totalIncome.toFixed(2)}`,
+    totalProfitText: `Rs. ${cashier.totalProfit.toFixed(2)}`,
   }));
 
   return pastCashiers;

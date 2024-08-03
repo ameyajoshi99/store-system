@@ -8,12 +8,12 @@ export const ERROR_TYPES = {
 const getErrorMessage = (type: string, value: number): Object => {
   const errors = {
     [ERROR_TYPES.BELOW_VALUE]: {
-      message: `Faltam $ ${value.toFixed(2)}`,
+      message: `Pending Rs. ${value.toFixed(2)}`,
       type: ERROR_TYPES.BELOW_VALUE,
     },
 
     [ERROR_TYPES.ABOVE_VALUE]: {
-      message: `Sobrando $ ${value.toFixed(2)}`,
+      message: `Additional $ ${value.toFixed(2)}`,
       type: ERROR_TYPES.ABOVE_VALUE,
     },
   };

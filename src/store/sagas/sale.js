@@ -1,7 +1,7 @@
 import { select, call, put } from 'redux-saga/effects';
 
 import moment from 'moment';
-import 'moment/locale/pt-br';
+import 'moment/locale/en-in';
 
 import shorthash from 'shorthash';
 
@@ -17,9 +17,9 @@ import { SALE } from './entitiesTypes';
 
 const parseSaleToTableView = (sale: Object): Object => ({
   ...sale,
-  subtotalText: `$ ${sale.subtotal.toFixed(2)}`,
+  subtotalText: `Rs. ${sale.subtotal.toFixed(2)}`,
   customerName: sale.customer.name || '-',
-  totalText: `$ ${sale.total.toFixed(2)}`,
+  totalText: `Rs. ${sale.total.toFixed(2)}`,
   products: sale.products.data,
 });
 
@@ -71,7 +71,7 @@ export function* createSale(action) {
 
 export function* getAllSales() {
   try {
-    moment.locale('pt-br');
+    moment.locale('en-in');
 
     const result = yield execRequest(SALE, READ_SALES, EVENT_TAGS.SALES_GET_ALL);
 
@@ -106,8 +106,8 @@ export function* editSale(action) {
 
     const saleUpdated = {
       ...sale,
-      subtotalText: `$ ${parseFloat(subtotal).toFixed(2)}`,
-      totalText: `$ ${parseFloat(total).toFixed(2)}`,
+      subtotalText: `Rs. ${parseFloat(subtotal).toFixed(2)}`,
+      totalText: `Rs. ${parseFloat(total).toFixed(2)}`,
       customerName: sale.customer.name || '-',
     };
 

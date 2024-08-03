@@ -71,7 +71,7 @@ class Product extends Component<Props, {}> {
     const productsToShow = products.data.map(product => ({
       ...product,
       brandName: product.brand.name,
-      salePriceText: `$ ${product.salePrice.toFixed(2)}`,
+      salePriceText: `Rs. ${product.salePrice.toFixed(2)}`,
     }));
 
     return productsToShow;

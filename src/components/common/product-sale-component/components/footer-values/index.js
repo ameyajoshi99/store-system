@@ -168,7 +168,7 @@ class FooterValues extends Component<Props, State> {
   getDiscountByPercentageText = (subtotal: number, value: number): string => {
     const subtotalInPercentage = getDiscountByPercentage(subtotal, value);
 
-    return `Discount (${value}%): $ ${subtotalInPercentage.toFixed(2)}`;
+    return `Discount (${value}%): Rs. ${subtotalInPercentage.toFixed(2)}`;
   };
 
   renderDiscount = (): Object => {
@@ -201,14 +201,14 @@ class FooterValues extends Component<Props, State> {
       <DefaultText
         color="mediumGray"
       >
-        {`Sub-total: $ ${subtotal.toFixed(2)}`}
+        {`Sub-total: Rs. ${subtotal.toFixed(2)}`}
       </DefaultText>
     );
   };
 
   renderTotal = (total: number): Object => (
     <TotalText>
-      {`Total: $ ${total.toFixed(2)}`}
+      {`Total: Rs. ${total.toFixed(2)}`}
     </TotalText>
   );
 

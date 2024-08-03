@@ -10,7 +10,7 @@ import Dialog from '@material-ui/core/Dialog';
 import Table from '@material-ui/core/Table';
 
 import moment from 'moment';
-import 'moment/locale/pt-br';
+import 'moment/locale/en-in';
 
 import styled from 'styled-components';
 
@@ -94,18 +94,20 @@ class PrintContent extends Component<Props, {}> {
       return '-';
     }
 
-    const discountText = (type === 'percentage' ? `${value}%` : `$ ${parseFloat(value).toFixed(2)}`);
+    const discountText = (type === 'percentage' ? `${value}%` : `Rs. ${parseFloat(value).toFixed(2)}`);
 
     return discountText;
   };
 
-  renderTextRow = (title: string, value: string): Object => (
+  renderTextRow = (title: string, value: string, value2: string): Object => (
     <HeaderTextWrapper>
       <HeaderTitleText>
         {title}
       </HeaderTitleText>
       <HeaderTitleValue>
         {value}
+        <br/>
+        {value2}
       </HeaderTitleValue>
     </HeaderTextWrapper>
   );
@@ -113,19 +115,11 @@ class PrintContent extends Component<Props, {}> {
   renderStoreInfo = (): Object => (
     <Fragment>
       <StoreTitle>
-        My Store
+        Kapaas Sustain
       </StoreTitle>
       <RowWrapper>
-        {this.renderTextRow('Address:', 'My Address, 09')}
-        {this.renderTextRow('Landline:', '(85) 3333-3333')}
-      </RowWrapper>
-      <RowWrapper>
-        {this.renderTextRow('Neighborhood:', 'My Neighborhood')}
-        {this.renderTextRow('Phone 1:', '(85) 9988-7766')}
-      </RowWrapper>
-      <RowWrapper>
-        {this.renderTextRow('Cep:', '60310-057')}
-        {this.renderTextRow('Celular 2:', '(85) 5544-3322')}
+        {this.renderTextRow('Address:', 'Shop No.3 Kotibhaskar Business Center', 'Kothrud, Pune 411038')}
+        {this.renderTextRow('Phone:', '(+91) 9767566466')}
       </RowWrapper>
     </Fragment>
   );
@@ -149,7 +143,7 @@ class PrintContent extends Component<Props, {}> {
         <DocumentTypeText>
           Sale Receipt
         </DocumentTypeText>
-        {this.renderTextRow('Emission', moment().format('lll'))}
+        {this.renderTextRow('Date', moment().format('lll'))}
       </OperationRow>
     );
 
@@ -217,12 +211,12 @@ class PrintContent extends Component<Props, {}> {
               <TableCell
                 numeric
               >
-                {`$ ${item.salePrice.toFixed(2)}`}
+                {`Rs. ${item.salePrice.toFixed(2)}`}
               </TableCell>
               <TableCell
                 numeric
               >
-                {`$ ${(item.salePrice * item.quantity).toFixed(2)}`}
+                {`Rs. ${(item.salePrice * item.quantity).toFixed(2)}`}
               </TableCell>
             </TableRow>
           ))}
@@ -240,9 +234,9 @@ class PrintContent extends Component<Props, {}> {
     return (
       <BottomValuesWrapper>
         <RowWrapper>
-          {this.renderTextRow('Sub-total:', `$ ${parseFloat(subtotal).toFixed(2)}`)}
+          {this.renderTextRow('Sub-total:', `Rs. ${parseFloat(subtotal).toFixed(2)}`)}
           {this.renderTextRow('Discount:', discountText)}
-          {this.renderTextRow('Total:', `$ ${parseFloat(total).toFixed(2)}`)}
+          {this.renderTextRow('Total:', `Rs. ${parseFloat(total).toFixed(2)}`)}
         </RowWrapper>
       </BottomValuesWrapper>
     );

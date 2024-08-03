@@ -41,7 +41,7 @@ const HeaderBar = (): Object => (
       <LeftSideContainer>
         <AboutMe />
         <Title>
-          MY STORE
+          Kapaas Sustain
         </Title>
       </LeftSideContainer>
       <RightSideContainer>
