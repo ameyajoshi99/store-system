@@ -10,7 +10,6 @@ const handlerStockEvents = require('./stock');
 const handleBrandEvents = require('./brand');
 const handleUserEvents = require('./user');
 const handleSaleEvents = require('./sale');
-const handleCategoriesEvents = require('./categories')
 
 const eventHandler = (entitie, operation, args) => {
   switch (entitie) {
@@ -33,8 +32,6 @@ const eventHandler = (entitie, operation, args) => {
     case ENTITIES.USER: return handleUserEvents(operation, args);
 
     case ENTITIES.SALE: return handleSaleEvents(operation, args);
-
-    case ENTITIES.CATEGORIES: return handleCategoriesEvents(operation, args);
 
     default: return {};
   }

@@ -39,7 +39,6 @@ const HeaderBar = (): Object => (
   <Toolbar>
     <Container>
       <LeftSideContainer>
-        <AboutMe />
         <Title>
           Kapaas Sustain
         </Title>

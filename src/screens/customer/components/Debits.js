@@ -165,7 +165,7 @@ class Debits extends Component<Props, State> {
     return (
       <TotalDebitWrapper>
         <TotalDebitText>
-          {`Total: $ ${totalDebit.toFixed(2)}`}
+          {`Total: Rs. ${totalDebit.toFixed(2)}`}
         </TotalDebitText>
       </TotalDebitWrapper>
     );

@@ -163,7 +163,7 @@ class FooterValues extends Component<Props, State> {
     });
   };
 
-  getDiscountByMoneyText = (value: number): string => `Discount: $ ${value.toFixed(2)}`;
+  getDiscountByMoneyText = (value: number): string => `Discount: Rs. ${value.toFixed(2)}`;
 
   getDiscountByPercentageText = (subtotal: number, value: number): string => {
     const subtotalInPercentage = getDiscountByPercentage(subtotal, value);

@@ -13,7 +13,7 @@ const getErrorMessage = (type: string, value: number): Object => {
     },
 
     [ERROR_TYPES.ABOVE_VALUE]: {
-      message: `Additional $ ${value.toFixed(2)}`,
+      message: `Additional Rs. ${value.toFixed(2)}`,
       type: ERROR_TYPES.ABOVE_VALUE,
     },
   };
