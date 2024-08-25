@@ -19,6 +19,10 @@ import {
 
 import ActionFormButton from '../../../components/common/ActionFormButton';
 
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import InputLabel from '@material-ui/core/InputLabel';
+
 type Props = {
   onChageFormToEditMode: Function,
   setFieldValue: Function,
@@ -30,11 +34,13 @@ type Props = {
   item: Object,
   isSubmitting: boolean,
   mode: string,
+  handleSelectChange: Function
 };
 
 class ProductForm extends Component<Props, {}> {
   state = {
     brandsCreated: [],
+    //selctedCategory: ''
   };
 
   onSubmitForm = (): void => {
@@ -53,6 +59,11 @@ class ProductForm extends Component<Props, {}> {
     this.setState({
       [id]: [item, ...dataset],
     });
+  };
+
+  handleSelectChange = (event: Object) => {
+    const { state } = this;
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   renderBarcodeAndDescription = (): void => {
@@ -120,12 +131,48 @@ class ProductForm extends Component<Props, {}> {
     );
   };
 
+  renderProductCategory = (): Object => {
+    const { selectedCategory } = this.state;
+    const { handleSelectChange } = this.props;
+
+
+  
+    return (
+      
+      <Section>
+        <InputLabel htmlFor="category-simple">Category</InputLabel>
+      <Select
+      onChange={handleSelectChange}
+      value={selectedCategory}
+      inputProps={{
+        name: 'Category',
+        id: 'category-simple',
+      }}>
+        <MenuItem value={1}>Cotton</MenuItem>
+                    <MenuItem value={2}>Raw Silk</MenuItem>
+                    <MenuItem value={3}>Tussar Silk</MenuItem>
+                    <MenuItem value={4}>Georgette</MenuItem>
+                    <MenuItem value={5}>Net</MenuItem>
+                    <MenuItem value={6}>Embd. Georgette</MenuItem>
+                    <MenuItem value={7}>Embd. Net</MenuItem>
+                    <MenuItem value={8}>Embd. Silk</MenuItem>
+                    <MenuItem value={9}>Velvet</MenuItem>
+                    <MenuItem value={10}>Embd. Velvet</MenuItem>
+                    <MenuItem value={11}>Handblock Print</MenuItem>
+                    <MenuItem value={12}>Digital Print</MenuItem>
+                    <MenuItem value={13}>Plain Cotton</MenuItem>
+      </Select>
+      </Section>
+    );
+  }
+
   renderProductInfoSection = (): Object => (
     <Section>
       {renderSectionTitle('Product Info')}
       {this.renderBarcodeAndDescription()}
       {this.renderPrices()}
       {this.renderBrandRow()}
+      {this.renderProductCategory()}
     </Section>
   );
 

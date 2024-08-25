@@ -274,7 +274,7 @@ This command will produce a folder called dist in the root of the project, that 
 ## Built With
 
 
-
+    
 * [Electron](https://electronjs.org/) - Used to build the native App
 
 * [React](https://reactjs.org/) - Front-end Framework

@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 
 import { Creators as ProductCreators } from '../../store/ducks/product';
 import { Creators as BrandCreators } from '../../store/ducks/brand';
+import { Creators as CategoryCreators } from '../../store/ducks/categories';
 
 import EntityComponent from '../../components/common/entity-component';
 import Snackbar from '../../components/common/Snackbar';
@@ -22,6 +23,8 @@ type Props = {
   getAllBrands: Function,
   editProduct: Function,
   brands: Array<Object>,
+  getAllCategories: Function,
+  categories: Array<Object>,
 };
 
 class Product extends Component<Props, {}> {
@@ -30,11 +33,13 @@ class Product extends Component<Props, {}> {
   };
 
   componentDidMount() {
-    const { getAllProducts, getAllBrands } = this.props;
+    const { getAllProducts, getAllBrands, getAllCategories } = this.props;
 
     getAllProducts();
 
     getAllBrands();
+
+    getAllCategories();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -130,7 +135,7 @@ class Product extends Component<Props, {}> {
   }
 }
 
-const Creators = Object.assign({}, BrandCreators, ProductCreators);
+const Creators = Object.assign({}, BrandCreators, ProductCreators, CategoryCreators);
 
 const mapDispatchToProps = dispatch => bindActionCreators(Creators, dispatch);
 

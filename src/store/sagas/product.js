@@ -125,3 +125,16 @@ export function* removeProduct(action) {
     yield put(ProductCreators.removeProductFailure(err.message));
   }
 }
+/*
+export function* getAllCategoriess() {
+  try {
+    const result = yield call(execRequest, CA, READ_PRODUCTS, EVENT_TAGS.GET_ALL_PRODUCTS);
+
+    const allProducts = result.map(product => parseProduct(product));
+
+    yield put(ProductCreators.getAllProductsSuccess(allProducts));
+  } catch (err) {
+    yield put(ProductCreators.getAllProductsFailure(err.message));
+  }
+}
+  */

@@ -14,6 +14,7 @@ const entities = {
   BRAND: 'BRAND',
   USER: 'USER',
   SALE: 'SALE',
+  CATEGORIES: 'CATEGORIES'
 };
 
 module.exports = entities;
